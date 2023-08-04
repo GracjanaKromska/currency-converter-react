@@ -1,6 +1,6 @@
 # Currency converter
 
-![OpenGraph]()
+![OpenGraph](https://github.com/GracjanaKromska/currency-converter-react/blob/main/screenshot.png?raw=true)
 
 ## Technologies used in the project:
 - HTML
