@@ -1,9 +1,8 @@
 import "./style.css";
 
-export const Result = ({ result }) => {
-  return (
+export const Result = ({ result }) => (
     <p className="result">
-      {result !== undefined && (
+      {result && (
         <>
           {result.sourceAmount.toFixed(2)} PLN={" "}
 
@@ -14,4 +13,3 @@ export const Result = ({ result }) => {
       )}
     </p>
   );
-};
