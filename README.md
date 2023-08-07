@@ -2,7 +2,12 @@
 
 ![OpenGraph](https://github.com/GracjanaKromska/currency-converter-react/blob/main/screenshot.png?raw=true)
 
+##Demo 
+
+https://gracjanakromska.github.io/currency-converter-react/
+
 ## Technologies used in the project:
+
 - HTML
 - CSS with BEM convention
 - JavaScript
