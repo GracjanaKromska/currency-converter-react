@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Clock } from "./Clock";
 import { Form } from "./Form";
 import { currencies } from "./currencies";
 
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <div className="app">
+      <Clock />
       <Form 
         result={result}
         convertResult={convertResult}
