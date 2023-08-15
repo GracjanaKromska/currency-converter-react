@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import "./style.css";
+import { Button, Field, Fieldset, LabelText, Legend } from "./styled";
 
 export const Form = ({ convertResult, result }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -13,20 +13,19 @@ export const Form = ({ convertResult, result }) => {
   }
 
   return (
-    <form className="form" onSubmit={onSubmit}>
-      <fieldset className="form__fieldset">
-        <legend className="form__legend">
+    <form onSubmit={onSubmit}>
+      <Fieldset>
+        <Legend>
           Currency converter
-        </legend>
+        </Legend>
         <p>
           <label>
-            <span className="form__labelText">
+            <LabelText>
               Polish zloty (PLN):
-            </span>
-            <input
+            </LabelText>
+            <Field
               value={amount}
               onChange={({ target }) => setAmount(target.value)}
-              className="form__field"
               type="number"
               step="0.01"
               min="0.01"
@@ -36,11 +35,11 @@ export const Form = ({ convertResult, result }) => {
         </p>
         <p>
           <label>
-            <span className="form__labelText">
+            <LabelText>
               Choose currency:
-            </span>
-            <select
-              className="form__field"
+            </LabelText>
+            <Field
+              as="select"
               value={currency}
               onChange={({ target }) => setCurrency(target.value)}
             >
@@ -52,14 +51,14 @@ export const Form = ({ convertResult, result }) => {
                   {currency.name}
                 </option>
               )))}
-            </select>
+            </Field>
           </label>
         </p>
-      </fieldset>
+      </Fieldset>
       <p>
-        <button className="form__button">
+        <Button>
           Convert
-        </button>
+        </Button>
       </p>
       <p>
         <Result result={result} />
