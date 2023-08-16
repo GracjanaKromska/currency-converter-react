@@ -9,9 +9,12 @@ https://gracjanakromska.github.io/currency-converter-react/
 ## Technologies used in the project:
 
 - HTML
-- CSS with BEM convention
+- CSS
 - JavaScript
+- Flex
 - React
+- Styled Components
+- Custom Hooks
 
 ## Description
 
