@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Clock } from "./Clock";
 import { Form } from "./Form";
 import { currencies } from "./currencies";
-import { Wrapper } from "./AppStyled";
+import { StyledApp } from "./AppStyled";
 
 function App() {
   const [result, setResult] = useState();
@@ -20,13 +20,13 @@ function App() {
   }
 
   return (
-    <Wrapper>
+    <StyledApp>
       <Clock />
-      <Form 
+      <Form
         result={result}
         convertResult={convertResult}
       />
-    </Wrapper>
+    </StyledApp>
   );
 }
 

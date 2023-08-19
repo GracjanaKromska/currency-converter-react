@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const StyledApp = styled.div`
     flex-basis: 500px;
     border: 1px solid ${({ theme }) => theme.color.laser};
     border-radius: 10px;
