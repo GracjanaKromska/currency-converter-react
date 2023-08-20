@@ -5,6 +5,7 @@ export const theme = {
         whitesmoke: "#f5f5f5",
         white: "#fff",
         laser: "#d2b379bb",
+        crimson: "#dc143c",
     },
     breakpoint: {
         mobileMax: 767,
