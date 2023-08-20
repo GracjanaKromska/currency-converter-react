@@ -15,6 +15,7 @@ https://gracjanakromska.github.io/currency-converter-react/
 - React
 - Styled Components
 - Custom Hooks
+- API
 
 ## Description
 
