@@ -51,7 +51,7 @@ export const Button = styled.button`
 `;
 
 export const Loading = styled.p`
-    color: ${({ theme }) => theme.color.laser};
+    color: ${({ theme }) => theme.color.black};
 `;
 
 export const Failure = styled.p`
