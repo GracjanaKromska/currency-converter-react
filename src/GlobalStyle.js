@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Lato', sans-serif;
         max-width: 500px;
+        min-height: 300px;
         margin: 0 auto;
         padding: 0 20px;
         background-image: url("${background}");
