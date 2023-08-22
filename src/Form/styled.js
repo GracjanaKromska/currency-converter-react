@@ -37,6 +37,7 @@ export const Button = styled.button`
     background-color: ${({ theme }) => theme.color.laser};
     color: ${({ theme }) => theme.color.white};
     padding: 10px;
+    margin-bottom: 20px;
     border-radius: 5px;
     transition: 0.3s;
 
