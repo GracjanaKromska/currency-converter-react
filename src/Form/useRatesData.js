@@ -5,10 +5,12 @@ export const useRatesData = () => {
     state: "loading",
   });
 
+  const urlAPI = "https://api.exchangerate.host/latest?base=PLN"
+
   useEffect(() => {
     const fetchRates = async () => {
       try {
-        const response = await fetch("https://api.exchangerate.host/latest?base=PLN");
+        const response = await fetch(urlAPI);
 
         if (!response.ok) {
           throw new Error(response.statusText);
