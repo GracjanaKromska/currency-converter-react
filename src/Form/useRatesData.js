@@ -19,14 +19,14 @@ export const useRatesData = () => {
         const { rates, date } = await response.json();
 
         setRatesData({
-          status: "success",
+          state: "success",
           rates,
           date,
         });
       }
       catch {
         setRatesData({
-          status: "error",
+          state: "error",
         });
       }
     };
