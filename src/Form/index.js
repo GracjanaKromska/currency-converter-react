@@ -9,16 +9,20 @@ import {
   Loading,
   Failure,
 } from "./styled";
+
 import { useRatesData } from "./useRatesData";
 
 export const Form = () => {
-  const [result, setResult] = useState();
+  const [result, setResult] = useState(0);
   const ratesData = useRatesData();
 
   const convertResult = (currency, amount) => {
-    const rate = ratesData.rates[currency];
+    const selectedCurrency = ratesData.data.data[currency];
+    const rate = selectedCurrency.value;
 
     setResult({
+      from: "PLN",
+      to: selectedCurrency.code,
       sourceAmount: +amount,
       targetAmount: amount * rate,
       currency,
@@ -60,7 +64,7 @@ export const Form = () => {
                     </LabelText>
                     <Field
                       value={amount}
-                      onChange={({ target }) => setAmount(target.value)}
+                      onChange={(event) => setAmount(event.target.value)}
                       type="number"
                       step="0.01"
                       min="0.01"
@@ -76,16 +80,16 @@ export const Form = () => {
                     <Field
                       as="select"
                       value={currency}
-                      onChange={({ target }) => setCurrency(target.value)}
+                      onChange={(event) => setCurrency(event.target.value)}
                     >
-                      {Object.keys(ratesData.rates).map(((currency) => (
+                      {ratesData.data && Object.keys(ratesData.data.data).map((currency) => (
                         <option
                           key={currency}
                           value={currency}
                         >
                           {currency}
                         </option>
-                      )))}
+                      ))}
                     </Field>
                   </label>
                 </p>
