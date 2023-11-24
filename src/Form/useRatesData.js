@@ -1,38 +1,31 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
+
+const urlAPI = "https://api.currencyapi.com/v3/latest?apikey=cur_live_8JKIIYnnJLtZY3IfgcEELXdrG1Xm4DoI3OWKhCrJ&currencies=&base_currency=PLN";
 
 export const useRatesData = () => {
   const [ratesData, setRatesData] = useState({
     state: "loading",
   });
 
-  const urlAPI = "https://api.exchangerate.host/latest?base=PLN"
-
   useEffect(() => {
-    const fetchRates = async () => {
-      try {
-        const response = await fetch(urlAPI);
-
-        if (!response.ok) {
-          throw new Error(response.statusText);
+    setTimeout(() => {
+      (async () => {
+        try {
+          const response = await axios.get(urlAPI);
+          setRatesData({
+            state: "success",
+            data: response.data,
+            meta: response.data.meta
+          });
         }
-
-        const { rates, date } = await response.json();
-
-        setRatesData({
-          state: "success",
-          rates,
-          date,
-        });
-      }
-      catch {
-        setRatesData({
-          state: "error",
-        });
-      }
-    };
-
-    setTimeout(fetchRates, 1000);
-
+        catch (error) {
+          setRatesData({
+            state: "error",
+          });
+        }
+      })();
+    }, 1000);
   }, []);
 
   return ratesData;
